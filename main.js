@@ -1,4 +1,6 @@
 
+  // Hamburger Menu
+  
   document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const closeMenu = document.querySelector(".close-menu");
@@ -21,3 +23,26 @@
       }
     });
   });
+
+//Filtering 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".filters button");
+  const projects = document.querySelectorAll(".projects .project");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter");
+
+      projects.forEach(project => {
+        const categories = project.getAttribute("data-category").split(" "); // Convert categories to an array
+
+        if (filter === "all" || categories.includes(filter)) {
+          project.style.display = "block";
+        } else {
+          project.style.display = "none";
+        }
+      });
+    });
+  });
+});

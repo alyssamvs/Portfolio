@@ -69,40 +69,53 @@
 
 <!-- Data Projects Intro -->
 
-<div class="blocktext">
+<!-- <div class="blocktext">
   <p>I am an illustrator, writer, information designer, and researcher. Some of my recent projects below:</p>
+</div> -->
+
+<!-- Projects Filter -->
+
+<div class="filters">
+  <button data-filter="all">#all</button>
+  <button data-filter="poster">#posters</button>
+  <button data-filter="dataviz">#dataviz</button>
+  <button data-filter="writing">#writing</button>
+  <button data-filter="coding">#coding</button>
+  <button data-filter="comics">#comics</button>
+  <button data-filter="art">#art</button>
+  <button data-filter="research">#research</button>
 </div>
 
 <!-- Projects -->
 
 <div class="projects">
 
-    <div class="project" onclick="window.location.href='projects/project1.html'">
+    <div class="project" data-category="coding" onclick="window.location.href='projects/project1.html'">
       <div class="image" style="background-image: url('images/sinegrid.gif');"></div>
-        <div class="label">Project 1: Description</div>
+        <div class="label"><b>Creative Coding</b> Sketches in p5.js and Processing</div>
       </div>
   
-    <div class="project" onclick="window.location.href='projects/project2.html'">
+    <div class="project" data-category="art poster" onclick="window.location.href='projects/project2.html'">
         <div class="image" style="background-image: url('images/owlu\ poster-01.jpg')"></div>
-        <div class="label">Project 2: Description</div>
+        <div class="label"><b>Poster Jam!</b> <br> Handdrawn, collage, and digital posters</div>
     </div>
     
-    <div class="project" onclick="window.location.href='projects/project3.html'">
+    <div class="project" data-category="dataviz" onclick="window.location.href='projects/project3.html'">
       <div class="image" style="background-image: url('images/Screenshot\ 2024-04-08\ at\ 2.33.48\ PM.png')"></div>
-        <div class="label">Project 3: Description</div>
+        <div class="label"><b>Will you fight in the Mosquito War?</b> <br>Malaria prevalance, then and now.</div>
     </div>
   
-    <div class="project" onclick="window.location.href='projects/project4.html'">
+    <div class="project" data-category="dataviz research" onclick="window.location.href='projects/project4.html'">
       <div class="image" style="background-image: url('images/Screenshot\ 2024-04-08\ at\ 3.21.08\ PM.png')"></div>
-        <div class="label">Project 4: Description</div>
+        <div class="label"><b>Journey of the Sacred Vine</b> <br>Legality and resurgence of Ayahuasca</div>
     </div>
   
-    <div class="project" onclick="window.location.href='projects/project5.html'">
+    <div class="project" data-category="poster" onclick="window.location.href='projects/project5.html'">
         <div class="image"style="background-image: url('images/blanquirroja.jpg')"></div>
         <div class="label">Project 5: Description</div>
     </div>
   
-    <div class="project" onclick="window.location.href='projects/project6.html'">
+    <div class="project" data-category="poster" onclick="window.location.href='projects/project6.html'">
       <div class="image" style="background-image: url('images/Poster_Mockups.png')"></div>
         <div class="label">Project 6: Description</div>
     </div>
