@@ -192,6 +192,11 @@ hr {
 }
 
 @media (max-width: 600px) {
+
+    .image {
+      filter: none !important;
+    }
+
     .projects {
         grid-template-columns: 1fr; /* Single column on very small screens */
     }
