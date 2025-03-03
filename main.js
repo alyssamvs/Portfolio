@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const filter = button.getAttribute("data-filter");
 
       projects.forEach(project => {
-        const categories = project.getAttribute("data-category").split(" "); // Convert categories to an array
+        const categories = project.getAttribute("data-category").split(" ");
 
         if (filter === "all" || categories.includes(filter)) {
           project.style.display = "block";
