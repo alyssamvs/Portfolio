@@ -7,3 +7,7 @@ Some issues I still have is slow loading times, on account of the quality of my 
 I did the framework and skeleton of the page very quickly, but then spent hours on relatively small things like the size of the images, their centering, and how to crop them correctly. I still haven't fully managed to handle the crops.
 
 For my dataprojects page, I wanted to have a scrolly function with sticky labels, but that's something that will take me too long and I've already delayed posting this for long enough. I'll keep on working on it though. 
+
+Published to Github Pages at: https://github.com/alyssamvs/Portfolio
+
+Github: https://github.com/alyssamvs
