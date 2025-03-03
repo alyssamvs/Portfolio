@@ -341,10 +341,17 @@ a:link {
     align-items:start;
     flex-wrap: wrap;
     justify-content: center; 
-    gap: 5rem; 
+    gap: 2rem; 
     max-width: 80%; 
     padding-top: 2rem;
     margin: 0 auto; 
+}
+
+.profile {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  flex: 1;
 }
 
 .profile img {
@@ -363,7 +370,7 @@ a:link {
 
 .bio p {
   margin: 0;
-  padding: 0;
+  padding-bottom: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -373,7 +380,14 @@ a:link {
     }
 
     .profile img {
-        max-width: 250px; 
-        max-height:250px;
+        max-width: 300px; 
+        max-height:300px;
+        margin: 0 auto;
+    }
+
+    .profile {
+        justify-content: center; /* Ensure it remains centered on small screens */
+        margin-bottom: 0; /* Adds space between image and bio */
+        width: 100%;
     }
 }
