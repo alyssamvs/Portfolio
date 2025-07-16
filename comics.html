@@ -10,6 +10,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7eab3b9f81.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    
+    <style>
+      /* Fullscreen Modal Styles */
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        overflow: auto;
+      }
+      
+      .fullscreen-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+      }
+      
+      .fullscreen-image {
+        max-width: 95%;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      }
+      
+      .fullscreen-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10001;
+        transition: background-color 0.3s ease;
+      }
+      
+      .fullscreen-close:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      
+      .fullscreen-title {
+        color: white;
+        font-family: "Roboto Mono", monospace;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        max-width: 80%;
+      }
+      
+      /* Make sure the existing CSS works with our changes */
+      .comics-page .project {
+        cursor: pointer;
+      }
+      
+      @media (max-width: 600px) {
+        .fullscreen-image {
+          max-width: 98%;
+          max-height: 85vh;
+        }
+        
+        .fullscreen-close {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+          top: 10px;
+          right: 10px;
+        }
+        
+        .fullscreen-title {
+          font-size: 14px;
+          max-width: 90%;
+        }
+      }
+    </style>
   </head>
 
 <!-- Header -->
@@ -67,37 +161,46 @@
 
 <div class="projects">
 
-    <div class="project" onclick="window.location.href='projects/project1.html'">
-      <div class="image" style="background-image: url('images/comics/toWEBP/riverking01.webp');"></div>
+    <div class="project" onclick="openFullscreen('images/comics/thumbnails/riverking01.jpg', 'The River King: Published in Fractured Realms anthology')">
+      <div class="image" style="background-image: url('images/comics/thumbnails/riverking01.jpg');"></div>
         <div class="label">The River King: Published in 'Fractured Realms' anthology</div>
       </div>
   
-    <div class="project" onclick="window.location.href='projects/project2.html'">
+    <div class="project" onclick="openFullscreen('images/comics/toWEBP/sinister01.webp', 'Sinister Compulsions, story by Ari Gross. Published in Unseen/Unheard Anthology')">
         <div class="image" style="background-image: url('images/comics/toWEBP/sinister01.webp')"></div>
         <div class="label">Sinister Compulsions, story by Ari Gross. Published in Unseen/Unheard Anthology</div>
     </div>
     
-    <div class="project" onclick="window.location.href='projects/project3.html'">
+    <div class="project" onclick="openFullscreen('webp_images/comics/hellblazer01.webp', 'Hellblazer Fan Art')">
       <div class="image" style="background-image: url('webp_images/comics/hellblazer01.webp')"></div>
-        <div class="label">Project 3: Description</div>
+        <div class="label">Hellblazer Fan Art</div>
     </div>
   
-    <div class="project" onclick="window.location.href='projects/project4.html'">
+    <div class="project" onclick="openFullscreen('images/Neighborhood\ Lights\ Pg\ 3-01.jpg', 'Neighborhood Lights - Page 3')">
       <div class="image" style="background-image: url('images/Neighborhood\ Lights\ Pg\ 3-01.jpg')"></div>
-        <div class="label">Project 4: Description</div>
+        <div class="label">Neighborhood Lights - Page 3</div>
     </div>
   
-    <div class="project" onclick="window.location.href='projects/project5.html'">
+    <div class="project" onclick="openFullscreen('images/Sinister\ Pg\ 1\ copy.jpg', 'Sinister - Page 1')">
       <div class="image" style="background-image: url('images/Sinister\ Pg\ 1\ copy.jpg')"></div>
-        <div class="label">Project 5: Description</div>
+        <div class="label">Sinister - Page 1</div>
     </div>
   
-    <div class="project" onclick="window.location.href='projects/project6.html'">
+    <div class="project" onclick="openFullscreen('images/Malachite_Page_3-01.png', 'Malachite - Page 3')">
       <div class="image" style="background-image: url('images/Malachite_Page_3-01.png')"></div>
-        <div class="label">Project 6: Description</div>
+        <div class="label">Malachite - Page 3</div>
     </div>
       
   </div>
+
+<!-- Fullscreen Modal -->
+<div class="fullscreen-modal" id="fullscreen-modal">
+  <button class="fullscreen-close" onclick="closeFullscreen()">×</button>
+  <div class="fullscreen-content">
+    <img class="fullscreen-image" id="fullscreen-image" src="" alt="Comic page">
+    <div class="fullscreen-title" id="fullscreen-title"></div>
+  </div>
+</div>
 
 <!-- Dropdown Navigation (hidden) -->
 
@@ -105,7 +208,7 @@
   <button class="close-menu" aria-label="Close Menu">x</button>
   <div class="button"><a href="about.html">about</a></div>
   <div class="button"><a href="data-stories.html">data stories</a></div>
-  <div class="button"><a href="other-work.html">other work</a></div>
+  <div class="button"><a href="comics.html">comics</a></div>
 
 
     <div class="icons">
@@ -115,8 +218,39 @@
     </div>
 </div>
 
+<script>
+// Fullscreen functionality
+function openFullscreen(imageSrc, title) {
+  const modal = document.getElementById('fullscreen-modal');
+  const image = document.getElementById('fullscreen-image');
+  const titleElement = document.getElementById('fullscreen-title');
+  
+  image.src = imageSrc;
+  titleElement.textContent = title;
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+function closeFullscreen() {
+  const modal = document.getElementById('fullscreen-modal');
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close on escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeFullscreen();
+  }
+});
+
+// Close when clicking on the modal background (but not the image)
+document.getElementById('fullscreen-modal').addEventListener('click', function(event) {
+  if (event.target === this) {
+    closeFullscreen();
+  }
+});
+</script>
 
   </body>
 </html>
-
-
