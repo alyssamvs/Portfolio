@@ -23,7 +23,7 @@
         <nav>
             <div class="button"><a href="about.html">about</a></div>
             <div class="button"><a href="data-stories.html">data stories</a></div>
-            <div class="button"><a href="other-work.html">other work</a></div>
+            <div class="button"><a href="comics.html">comics</a></div>
         </nav>
       </div>
     
@@ -57,6 +57,21 @@
 
     <hr>
 
+<!-- Projects Filter -->
+
+<div class="filters">
+  <button data-filter="all">#all</button>
+  <button data-filter="dataviz">#dataviz</button>
+  <button data-filter="research">#research</button>
+  <button data-filter="writing">#writing</button>
+  <button data-filter="comics">#comics</button>
+  <button data-filter="poster">#posters</button>
+  <button data-filter="graphic-design">#graphic-design</button>
+  <button data-filter="coding">#coding</button>
+  <button data-filter="art">#art</button>
+  
+</div>
+
 <!-- Projects -->
 
 <div class="projects">
@@ -71,8 +86,8 @@
         <div class="label">Project 2: Description</div>
     </div>
     
-    <div class="project" onclick="window.location.href='projects/project3.html'">
-      <div class="image" style="background-image: url('images/Hellblazer\ 230\ Page\ 1\ -\ Black.jpg')"></div>
+    <div class="project" data-category="coding" onclick="window.location.href='projects/project3.html'">
+      <div class="image" style="background-image: url('webp_images/comics/hellblazer01.webp')"></div>
         <div class="label">Project 3: Description</div>
     </div>
   

@@ -306,3 +306,32 @@ a:link {
     transition: filter 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
+
+  .filters {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10px;
+    margin: 0 auto;
+    max-width: 90%;
+    width: 100%; 
+    text-align: center;
+
+  }
+
+  .filters button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: thin;
+    
+  }
+
+  .filters button:hover, .filters button:active {
+    color: #868BA5;
+    background-color: transparent;
+    text-decoration: underline;
+  }

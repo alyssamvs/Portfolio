@@ -230,7 +230,7 @@ hr {
 
 .image {
     background-color: #868BA5;
-    filter: grayscale();
+    /* filter: grayscale(); */
 }
 
 .project:hover .image {
